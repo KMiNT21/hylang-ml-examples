@@ -7,25 +7,27 @@
 ; (setv repo_path "black-forest-labs/FLUX.1-dev")
 (setv repo_path "c:/FLUX.1-dev")
 
-(setv text_encoder_t5 (T5EncoderModel.from_pretrained
-                       repo_path
-                       :subfolder "text_encoder_2"
-                       :quantization_config (TransformersBitsAndBytesConfig :load_in_4bit True)
-                       :torch_dtype bfloat16
-                       ))
+(setv text_encoder_t5
+  (T5EncoderModel.from_pretrained
+   repo_path
+   :subfolder "text_encoder_2"
+   :quantization_config (TransformersBitsAndBytesConfig :load_in_4bit True)
+   :torch_dtype bfloat16))
 
-(setv transformer (FluxTransformer2DModel.from_pretrained
-                   repo_path
-                   :subfolder "transformer"
-                   :quantization_config (DiffusersBitsAndBytesConfig :load_in_8bit True)
-                   :torch_dtype bfloat16))
+(setv transformer
+  (FluxTransformer2DModel.from_pretrained
+   repo_path
+   :subfolder "transformer"
+   :quantization_config (DiffusersBitsAndBytesConfig :load_in_8bit True)
+   :torch_dtype bfloat16))
 
-(setv pipe (FluxPipeline.from_pretrained
-            repo_path
-            :text_encoder_2 text_encoder_t5
-            :transformer transformer
-            :device_map "balanced"
-            :torch_dtype bfloat16))
+(setv pipe
+  (FluxPipeline.from_pretrained
+   repo_path
+   :text_encoder_2 text_encoder_t5
+   :transformer transformer
+   :device_map "balanced"
+   :torch_dtype bfloat16))
 
 ; (print "pipe.text_encoder_t5: " (pipe.text_encoder_2.get_memory_footprint))
 ; (print "pipe.transformer:     " (pipe.transformer.get_memory_footprint))
