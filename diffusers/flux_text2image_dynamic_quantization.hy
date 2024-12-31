@@ -1,4 +1,4 @@
-(import torch [bfloat16 float32])
+(import torch [bfloat16])
 (import transformers [T5EncoderModel BitsAndBytesConfig :as TransformersBitsAndBytesConfig])
 (import diffusers [BitsAndBytesConfig :as DiffusersBitsAndBytesConfig])
 (import diffusers.pipelines.flux.pipeline_flux [FluxPipeline])
