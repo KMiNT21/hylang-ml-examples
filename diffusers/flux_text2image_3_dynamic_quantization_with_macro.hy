@@ -41,7 +41,7 @@
 
 (setv output
   (pipe
-   :prompt "Cute AI robot wearing gelmet with print 'LISP', parrot on his shoulder and fluffy rufous cat"
+   :prompt "Cute AI robot wearing helmet with print 'LISP', parrot on his shoulder and fluffy rufous cat"
    :width 1024
    :height 1024
    :num_inference_steps 30 ; Approximately 1 second per step on a 4090 with default Sceduler
