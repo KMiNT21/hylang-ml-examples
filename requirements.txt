@@ -1,4 +1,5 @@
 hy
 hyrule
+loguru
 torch
 diffusers
