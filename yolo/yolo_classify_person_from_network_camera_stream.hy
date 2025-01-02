@@ -16,8 +16,8 @@
   (setv top1conf (first-result.probs.top1conf.item))
   (setv person-detected (and (= top1 person-class-index) (> top1conf person-confidence-threshold)))
   (if person-detected
-    (cv2.imshow "Person detected!" frame)
-    (cv2.imshow "No events..." frame))
+    (cv2.imshow "Person detected!" frame)  ; different windows will be opened for simplicity
+    (cv2.imshow "No events..." frame))     ; different windows will be opened for simplicity
   (cv2.waitKey 1))
 
 (while True
