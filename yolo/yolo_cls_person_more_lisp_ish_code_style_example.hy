@@ -34,5 +34,5 @@
 (while True
   (let [capture-device (cv2.VideoCapture video-source)]
     (while (read-device-and-process-frame capture-device)
-      None)
+      (continue))
     (print "End of stream or file. Reopening/reconnecting")))
