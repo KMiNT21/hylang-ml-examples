@@ -3,3 +3,5 @@ hyrule
 loguru
 torch
 diffusers
+ultralytics
+cv2
