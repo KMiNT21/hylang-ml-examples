@@ -10,13 +10,7 @@
 
 (setv model (YOLO model-path))
 
-(defmacro do-while [condition #* body]
-  `(do
-     ~@body
-     (while ~condition
-       ~@body)))
-
-(defn read-device [cap]
+(defn read-device-and-process-frame [cap]
   (let [ret-and-frame-tuple (cap.read)
         success? (first ret-and-frame-tuple)
         frame (last ret-and-frame-tuple)]
@@ -38,6 +32,7 @@
     (cv2.waitKey 1)))
 
 (while True
-  (let [cap (cv2.VideoCapture video-source)]
-    (do-while (read-device cap))
+  (let [capture-device (cv2.VideoCapture video-source)]
+    (while (read-device-and-process-frame capture-device)
+      None)
     (print "End of stream or file. Reopening/reconnecting")))
