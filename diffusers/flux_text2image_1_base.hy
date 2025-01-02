@@ -8,11 +8,11 @@
 
 (setv output
   (pipe
-   :prompt "A vary simplified cartoon-style penguin with the word 'BASE'"
+   :prompt "A very simplified cartoon-style penguin with the word 'BASE'"
    :width 1024
    :height 1024
    :num_inference_steps 30
-   :guidance_scale 7.5))
+   :guidance_scale 6.5))
 
 (setv image (get output.images 0))
 (image.save "flux-image-test-base.jpg")
