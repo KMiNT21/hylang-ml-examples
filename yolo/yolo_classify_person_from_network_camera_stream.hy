@@ -49,6 +49,6 @@
 ;   (do-while (process (cap.read))))
 
 
-
-(cap.release)
-(cv2.destroyAllWindows)
+; use this if you don't use infinite loop:
+; (cap.release)
+; (cv2.destroyAllWindows)
