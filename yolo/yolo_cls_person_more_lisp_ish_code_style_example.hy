@@ -11,9 +11,7 @@
 (setv model (YOLO model-path))
 
 (defn read-device-and-process-frame [cap]
-  (let [ret-and-frame-tuple (cap.read)
-        success? (first ret-and-frame-tuple)
-        frame (last ret-and-frame-tuple)]
+  (let [#(success? frame) (cap.read)]
     (when success?
       (process frame))))
 
