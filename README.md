@@ -6,6 +6,8 @@ A collection (**just beginning to fill up**) of examples showcasing Hy (a Lisp d
 
 ## About
 
+**My goal is not to showcase code cluttered with parentheses, but rather to demonstrate code that is highly readable (though this might not be immediately obvious to those unfamiliar with LISP syntax). And code that remains concise at the same time.**
+
 This repository demonstrates the power and elegance of Hy - a Lisp dialect embedded in Python - applied to machine learning problems. Hy combines the best of both worlds: the expressiveness and metaprogramming capabilities of Lisp with Python's rich machine learning ecosystem.
 
 ## Why Lisp for Machine Learning?
@@ -137,6 +139,7 @@ cd hylang-ml-examples
 
 I welcome your contributions!
 
+ ![LISP](hy-hylang-python-lisp.jpg)
 ---
 
 *"In Lisp, you don't just write your program; your program writes your program"*
