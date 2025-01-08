@@ -5,3 +5,4 @@ torch
 diffusers
 ultralytics
 cv2
+toolz
