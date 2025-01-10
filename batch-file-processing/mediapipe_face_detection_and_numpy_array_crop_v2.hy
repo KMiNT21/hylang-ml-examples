@@ -1,6 +1,6 @@
-(require hyrule [-> ->> as-> ncut unless ap-filter ap-reject ap-map unless])
-(import numpy :as np) 
+(require hyrule [-> ->> as-> ap-filter ap-reject ap-map unless ncut])
 (import os cv2 mediapipe)
+(import numpy :as np) 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (setv source-directory-path "C:/temp/png")
