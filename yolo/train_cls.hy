@@ -5,8 +5,8 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (setv dataset-path "D:/data/camera/images_928x576-CAM01")  ; root folder with "train" folder inside
-(setv model (ultralytics.YOLO "C:/OneDrive/SRC/hylang-ml-examples/yolo/my-yolov8n-cls.yaml"))
-(setv shuffle-data False)  ; Move val to train, shuffle and split trans/val sets again
+(setv model (ultralytics.YOLO "my-yolov8n-cls.yaml"))
+(setv shuffle-data True)  ; Move val to train, shuffle and split trans/val sets again
 (setv new-val-train-split 0.2)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
