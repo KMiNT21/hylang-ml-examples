@@ -3,6 +3,10 @@ hyrule
 loguru
 torch
 diffusers
+accelerate
+bitsandbytes
+peft
+sensencepiece
 ultralytics
 cv2
 toolz
