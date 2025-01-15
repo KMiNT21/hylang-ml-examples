@@ -6,7 +6,7 @@ diffusers
 accelerate
 bitsandbytes
 peft
-sensencepiece
+sentencepiece
 ultralytics
 cv2
 toolz
