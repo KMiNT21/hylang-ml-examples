@@ -91,7 +91,7 @@ hylang-ml-examples/
     (print "End of stream or file. Reopening/reconnecting")))
 ```
 
-### Other macros example
+### Other macros examples
 
 ```hy
 (doto pipe
@@ -100,6 +100,15 @@ hylang-ml-examples/
   (.vae.to "cuda")
   (.vae.enable_slicing)
   (.vae.enable_tiling))
+```
+
+```hy
+(setv found-files (->> images-directory-path
+                       os.scandir
+                       (ap-map it.path)
+                       (ap-filter (it.endswith ".jpg"))
+                       (ap-filter (found? text-to-find it))
+                       list))
 ```
 
 ## Getting Started
