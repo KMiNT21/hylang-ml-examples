@@ -2,3 +2,6 @@ __pycache__
 *.jpg
 *.png
 !hy-hylang-python-lisp.jpg
+musor/*
+desktop.ini
+.vscode
