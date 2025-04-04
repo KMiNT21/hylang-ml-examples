@@ -1,7 +1,14 @@
 (require hyrule [-> ->> as-> ap-filter ap-reject ap-map ap-each ncut])
 (import hyrule [assoc inc])
+(import os)
 (import cv2)
 (import numpy :as np)
+
+
+(defn is-it-image? [file-name]
+  (if (not (os.path.isfile file-name))
+    False
+    (as-> file-name it (it.lower) (map it.endswith [".jpg" ".png" ".jpeg"]) (any it))))
 
 
 (defn remove-green-halo-from-npimage [#^ cv2.typing.MatLike image 
