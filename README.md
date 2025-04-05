@@ -2,17 +2,17 @@
 
 > "Code is Data, Data is Code" — The Lisp Way
 
-A collection (**just beginning to fill up**) of examples showcasing Hy (a Lisp dialect embedded in Python) for machine learning tasks.
+A collection (**in its early stages**) of examples showcasing Hy (a Lisp dialect embedded in Python) for machine learning tasks.
 
 ## About
 
-**My goal is not to showcase code cluttered with parentheses, but rather to demonstrate code that is highly readable (though this might not be immediately obvious to those unfamiliar with LISP syntax). And code that remains concise at the same time.**
+My goal is to demonstrate how Hy's Lisp syntax leads to **highly readable and concise code** for machine learning tasks, even if it might seem unfamiliar at first glance.
 
-This repository demonstrates the power and elegance of Hy - a Lisp dialect embedded in Python - applied to machine learning problems. Hy combines the best of both worlds: the expressiveness and metaprogramming capabilities of Lisp with Python's rich machine learning ecosystem.
+This repository demonstrates the power and elegance of Hy, a **Lisp dialect** embedded in **Python**, applied to **machine learning** problems. Hy combines the best of both worlds: the expressiveness and metaprogramming capabilities of Lisp with Python's rich machine learning ecosystem.
 
 ## Why Lisp for Machine Learning?
 
-The Lisp family of languages offers unique advantages for developing ML systems:
+The Lisp family of languages offers unique advantages for developing **ML systems**:
 
 - **Homoiconicity**: Code and data share the same representation, making metaprogramming natural and powerful
 - **Macros**: Enable creation of specialized DSLs for ML tasks
@@ -42,6 +42,7 @@ hylang-ml-examples/
 ### Data Pipeline with Threading Macro
 
 ```hy
+;; threading macro -> (first parameter)
 (defn preprocess-data [data]
   (-> data
       (normalize-features)
@@ -51,6 +52,7 @@ hylang-ml-examples/
 ```
 
 ```hy
+;; threading macro as-> ("it" as iterator)
 (as-> (pipe
        :prompt "Ukrainian girl with parrot on her shoulder and fluffy rufous cat"
        :width 1024
@@ -63,6 +65,7 @@ hylang-ml-examples/
 ```
 
 ```hy
+;; threading macro -> (first parameter)
 ;; Image background removing by BiRefNet_HR model
 (setv image (Image.open image-path))
 (with [_ (torch.no_grad)]
@@ -83,6 +86,16 @@ hylang-ml-examples/
   (.putalpha new-alpha)
   (.save "result.png"))
 ```
+
+```hy
+;; threading macro ->> (second parameter)
+(setv image-paths (->> args.path
+                       os.scandir
+                       (ap-map it.path)
+                       (filter is-it-image?)
+                       list))
+```
+
 
 ### Network stream processing: person detection with YOLO classification model
 
