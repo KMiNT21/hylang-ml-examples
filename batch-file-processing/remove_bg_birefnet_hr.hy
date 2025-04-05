@@ -9,9 +9,7 @@
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-; (setv images-directory-path "D:/data/km-images-pipeline/raw2")
 (setv images-directory-path "D:/data/temp")
-; (setv target-directory-path "D:/data/km-images-pipeline/person-isolated-transparent")
 (setv target-directory-path "D:/data/temp/processed")
 (setv skip-existing-files True)
 (setv [model-name model-resolution] ["ZhengPeng7/BiRefNet_HR" 2048])
