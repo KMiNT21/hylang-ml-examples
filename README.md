@@ -62,6 +62,28 @@ hylang-ml-examples/
   (.save it f"flux-text-to-image-{(time):.0f}.jpg"))
 ```
 
+```hy
+;; Image background removing by BiRefNet_HR model
+(setv image (Image.open image-path))
+(with [_ (torch.no_grad)]
+  (setv new-alpha (-> image
+                  transform-image
+                  (.unsqueeze 0)
+                  (.to "cuda")
+                  .half
+                  birefnet
+                  (get -1)
+                  .sigmoid
+                  .cpu
+                  (get 0)
+                  .squeeze
+                  ((transforms.ToPILImage))
+                  (.resize image.size))))
+(doto image
+  (.putalpha new-alpha)
+  (.save "result.png"))
+```
+
 ### Network stream processing: person detection with YOLO classification model
 
 ```hy
