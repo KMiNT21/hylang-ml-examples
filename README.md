@@ -95,7 +95,15 @@ hylang-ml-examples/
                        (filter is-it-image?)
                        list))
 ```
-
+```hy
+;; threading macro ->> (second parameter)
+(setv found-files (->> images-directory-path
+                       os.scandir
+                       (ap-map it.path)
+                       (ap-filter (it.endswith ".jpg"))
+                       (ap-filter (found? text-to-find it))
+                       list))
+```
 
 ### Network stream processing: person detection with YOLO classification model
 
@@ -126,7 +134,7 @@ hylang-ml-examples/
     (print "End of stream or file. Reopening/reconnecting")))
 ```
 
-### Other macros examples
+### Other macro examples
 
 ```hy
 (doto pipe
@@ -137,14 +145,7 @@ hylang-ml-examples/
   (.vae.enable_tiling))
 ```
 
-```hy
-(setv found-files (->> images-directory-path
-                       os.scandir
-                       (ap-map it.path)
-                       (ap-filter (it.endswith ".jpg"))
-                       (ap-filter (found? text-to-find it))
-                       list))
-```
+
 
 ## Getting Started
 
