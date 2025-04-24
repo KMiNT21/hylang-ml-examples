@@ -7,7 +7,7 @@
 
 
 ; get your free key at https://aistudio.google.com/apikey and create ENV key
-(setv client (genai.Client :api_key (os.getenv "GENAI-API")))
+(setv client (genai.Client :api_key (os.getenv "GOOGLE_API_KEY")))
 (setv model "gemini-2.0-flash")
 
 
